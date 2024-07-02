@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpn1xe33lw4wb"]
+
+[ext_resource type="Material" uid="uid://dc104doh056st" path="res://Materials/Ally.tres" id="1_xmmuu"]
+[ext_resource type="Material" uid="uid://bsuki2cj2j820" path="res://Materials/Eyes.tres" id="2_wku50"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2rttm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ticjo"]
+
+[node name="Hero" type="Node3D"]
+
+[node name="Jumper" type="Node3D" parent="."]
+
+[node name="Body" type="MeshInstance3D" parent="Jumper"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+material_override = ExtResource("1_xmmuu")
+mesh = SubResource("SphereMesh_2rttm")
+
+[node name="Eye" type="MeshInstance3D" parent="Jumper/Body"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.17, 0.32, 0.3)
+material_override = ExtResource("2_wku50")
+mesh = SubResource("SphereMesh_ticjo")
+
+[node name="Eye2" type="MeshInstance3D" parent="Jumper/Body"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.17, 0.32, 0.3)
+material_override = ExtResource("2_wku50")
+mesh = SubResource("SphereMesh_ticjo")

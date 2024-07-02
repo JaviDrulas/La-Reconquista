@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://du50ewqtyqclg"]
+
+[ext_resource type="Script" path="res://Scripts/View Model Component/Tile.gd" id="1_8gwpq"]
+[ext_resource type="Material" uid="uid://bgkuls53ljcui" path="res://Materials/Dirt.tres" id="1_ej8rq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dq76h"]
+
+[node name="Tile" type="Node3D"]
+script = ExtResource("1_8gwpq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_ej8rq")
+mesh = SubResource("BoxMesh_dq76h")
