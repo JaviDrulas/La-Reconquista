@@ -12,6 +12,8 @@ func Init():
 	var p:Vector2i = _owner.board.tiles.keys()[0]
 	SelectTile(p)
 	
+	SpawnTestUnits()
+	
 	_owner.cameraController.setFollow(_owner.board.marker)
 	
 	_owner.stateMachine.ChangeState(selectUnitState) 
