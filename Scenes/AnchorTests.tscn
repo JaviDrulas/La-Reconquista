@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://conrwu8bhwt4j"]
+
+[ext_resource type="Script" path="res://Scripts/Common/UI/LayoutAnchor.gd" id="1_3e88r"]
+[ext_resource type="Script" path="res://Scripts/Test/PanelTests.gd" id="2_jr0o6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tfxk0"]
+
+[node name="AnchorTests" type="Node3D"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_right = 0.33
+anchor_bottom = 1.0
+
+[node name="ParentPanel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 75.0
+offset_right = -75.0
+offset_bottom = -75.0
+
+[node name="VRect" type="ReferenceRect" parent="ParentPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+editor_only = false
+
+[node name="HRect" type="ReferenceRect" parent="ParentPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+editor_only = false
+
+[node name="FullRect" type="ReferenceRect" parent="ParentPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+editor_only = false
+
+[node name="AnchorInfo" type="Label" parent="ParentPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -75.0
+text = "PlaceHolder Text
+"
+label_settings = SubResource("LabelSettings_tfxk0")
+
+[node name="ChildPanel" type="Panel" parent="ParentPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3e88r")
+
+[node name="PanelTestController" type="Node" parent="ParentPanel/ChildPanel" node_paths=PackedStringArray("childPanel", "textLabel")]
+script = ExtResource("2_jr0o6")
+childPanel = NodePath("..")
+textLabel = NodePath("../../AnchorInfo")
+animated = true
